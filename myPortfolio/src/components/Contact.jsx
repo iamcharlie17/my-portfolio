@@ -1,8 +1,10 @@
 import toast from "react-hot-toast";
 import SectionTitle from "./SectionTitle";
 import axios from "axios";
+import { useState } from "react";
 
 const Contact = () => {
+  const [loading, setLoading] = useState(false);
   const handleSubmit = async (e) => {
     e.preventDefault();
     const form = e.target;
@@ -13,15 +15,20 @@ const Contact = () => {
     const message = form.message.value;
 
     try {
+      setLoading(true);
       const { data } = await axios.post(
         "https://portfoilo-server.vercel.app/contacts",
         { name, phone, email, subject, message }
       );
-      if(data.insertedId){
-        toast.success("Thanks for your message.")
+      if (data.insertedId) {
+        toast.success("Thanks for your message.");
+        form.reset();
+        setLoading(false);
       }
     } catch (error) {
       toast.error(`${error.message}`);
+      form.reset();
+      setLoading(false);
     }
   };
 
@@ -93,8 +100,11 @@ const Contact = () => {
               ></textarea>
             </div>
             <div className="text-center md:col-span-2">
-              <button className="py-2 px-12 bg-gray-400 hover:bg-yellow-400 text-black font-semibold rounded-full">
-                Send Message
+              <button
+                disabled={loading}
+                className="py-2 px-12 bg-gray-400 hover:bg-yellow-400 text-black font-semibold rounded-full"
+              >
+                {loading ? "Wait..." : "Send Message"}
               </button>
             </div>
           </form>
