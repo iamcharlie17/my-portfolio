@@ -1,5 +1,8 @@
 import { useState } from "react";
-import { NavHashLink } from "react-router-hash-link/dist/react-router-hash-link.cjs.production";
+import {
+  HashLink,
+  NavHashLink,
+} from "react-router-hash-link/dist/react-router-hash-link.cjs.production";
 
 const Nav = () => {
   const [fix, setFix] = useState(false);
@@ -23,25 +26,33 @@ const Nav = () => {
   ];
 
   return (
-    <div
-      className={`container py-8 fixed bg-transparent w-full mx-auto transition-all duration-500  z-10 ${
-        fix && "bg-white text-black py-4"
-      }`}
-    >
-      <div className="flex justify-between items-center mx-24">
-        <div>
-          <h1 className="text-5xl font-kaushan font-bold">Charlie</h1>
-        </div>
-        <div>
-          <ul className={`gap-4 hidden md:flex ${fix && "text-black"}`}>
-            {links.map((link) => (
-              <li key={link.to}>
-                <NavHashLink smooth to={link.to} className={``}>
-                  {link.label}
-                </NavHashLink>
-              </li>
-            ))}
-          </ul>
+    <div>
+      <div
+        className={` my-4 fixed bg-transparent w-full  transition-all duration-500  z-10 ${
+          fix && " bg-gray-800  py-4 my-0"
+        }`}
+      >
+        <div className="container mx-auto">
+          <div className="flex justify-between  items-center mx-4 md:mx-16 lg:mx-24">
+            <div>
+              <HashLink smooth to={'#home'}>
+                <h1 className="text-3xl md:text-5xl font-kaushan font-bold">
+                  Charlie
+                </h1>
+              </HashLink>
+            </div>
+            <div>
+              <ul className={`gap-4 hidden  ${fix ? "md:flex" : "hidden"}`}>
+                {links.map((link) => (
+                  <li key={link.to}>
+                    <NavHashLink smooth to={link.to} className={``}>
+                      {link.label}
+                    </NavHashLink>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
     </div>
