@@ -19,7 +19,7 @@ const Banner = () => {
         <div className="hero-overlay bg-opacity-0"></div>
         <div className="hero-content flex flex-col text-center text-neutral-content">
           <div className="h-24">
-            <h1 className="mb-5 text-xl md:text-5xl lg:text-7xl font-bold text-white">
+            <h1 className="mb-5 text-3xl md:text-5xl lg:text-7xl font-bold text-white">
               <Typewriter
                 loop={true}
                 words={[

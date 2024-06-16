@@ -1,6 +1,8 @@
 import About from "../components/About";
 import Banner from "../components/Banner";
+import Contact from "../components/Contact";
 import EidMubarak from "../components/EidMubarak";
+import Projects from "../components/Projects";
 import Services from "../components/Services";
 
 
@@ -11,6 +13,8 @@ const Home = () => {
             <EidMubarak/>
             <About/>
             <Services/>
+            <Projects/>
+            <Contact/>
         </div>
     );
 };

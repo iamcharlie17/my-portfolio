@@ -13,8 +13,8 @@ const Services = () => {
       <SectionTitle heading={"What I Do"}></SectionTitle>
       <div id="services" className="md:mx-24 my-12">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 my-8 p-4 md:p-8 lg:p-12 bg-gray-900">
-          <div className="bg-black hover:-translate-y-2 transition-transform p-4 text-center rounded-lg space-y-1 m-4">
-            <div className="flex justify-center transition-transform w-full">
+          <div className="bg-black hover:-translate-y-2 text-white transition-transform p-4 text-center rounded-lg space-y-1 m-4">
+            <div className="flex justify-center text-white transition-transform w-full">
               <div className="h-12 w-12 bg-gray-800 py-4 relative rounded-xl flex justify-center items-center text-4xl">
                 <IoIosColorFilter />
               </div>
@@ -32,8 +32,8 @@ const Services = () => {
             </div>
           </div>
 
-          <div className="bg-black hover:-translate-y-2 transition-transform p-4 text-center rounded-lg space-y-1 m-4">
-            <div className="flex justify-center transition-transform w-full">
+          <div className="bg-black hover:-translate-y-2 text-white transition-transform p-4 text-center rounded-lg space-y-1 m-4">
+            <div className="flex justify-center text-white transition-transform w-full">
               <div className="h-12 w-12 bg-gray-800 py-4 relative rounded-xl flex justify-center items-center text-4xl">
                 <IoMdCode />
               </div>
@@ -51,8 +51,8 @@ const Services = () => {
             </div>
           </div>
 
-          <div className="bg-black hover:-translate-y-2 transition-transform p-4 text-center rounded-lg space-y-1 m-4">
-            <div className="flex justify-center transition-transform w-full">
+          <div className="bg-black hover:-translate-y-2 text-white transition-transform p-4 text-center rounded-lg space-y-1 m-4">
+            <div className="flex justify-center text-white transition-transform w-full">
               <div className="h-12 w-12 bg-gray-800 py-4 relative rounded-xl flex justify-center items-center text-4xl">
                 <IoMdPricetag />
               </div>
@@ -71,8 +71,8 @@ const Services = () => {
             </div>
           </div>
 
-          <div className="bg-black hover:-translate-y-2 transition-transform p-4 text-center rounded-lg space-y-1 m-4">
-            <div className="flex justify-center transition-transform w-full">
+          <div className="bg-black hover:-translate-y-2 text-white transition-transform p-4 text-center rounded-lg space-y-1 m-4">
+            <div className="flex justify-center text-white transition-transform w-full">
               <div className="h-12 w-12 bg-gray-800 py-4 relative rounded-xl flex justify-center items-center text-4xl">
                 <IoMdHelpCircle />
               </div>

@@ -28,15 +28,15 @@ const Nav = () => {
   return (
     <div>
       <div
-        className={` my-4 fixed bg-transparent w-full  transition-all duration-500  z-10 ${
-          fix && " bg-gray-800  py-4 my-0"
+        className={`py-4 fixed bg-transparent w-full  transition-all duration-500  z-10 ${
+          fix && " bg-white text-black"
         }`}
       >
         <div className="container mx-auto">
           <div className="flex justify-between  items-center mx-4 md:mx-16 lg:mx-24">
             <div>
               <HashLink smooth to={'#home'}>
-                <h1 className="text-3xl md:text-5xl font-kaushan font-bold">
+                <h1 className={`text-3xl md:text-5xl font-kaushan font-bold ${fix? 'text-black':'text-gray-200'}`}>
                   Charlie
                 </h1>
               </HashLink>
