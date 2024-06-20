@@ -1,13 +1,29 @@
 import { Typewriter } from "react-simple-typewriter";
 import banner from "../assets/images/portfolioBanner.jpg";
 import { FaFacebookF } from "react-icons/fa";
-import { FaInstagram } from "react-icons/fa6";
+import { FaArrowDownLong, FaInstagram } from "react-icons/fa6";
 import { RiTwitterXFill } from "react-icons/ri";
 import { FaLinkedinIn } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { useState } from "react";
+import { HashLink } from "react-router-hash-link";
 
 const Banner = () => {
+  const [hidden, setHidden] = useState(false);
+
+  const handleHidden = () => {
+    if (window.scrollY >= 400) {
+      setHidden(true);
+    } else {
+      setHidden(false);
+    }
+  };
+
+  window.addEventListener("scroll", handleHidden);
+
+  // console.log(hidden)
+
   return (
     <div>
       <div
@@ -31,7 +47,7 @@ const Banner = () => {
               />
             </h1>
           </div>
-          <div className="flex md:text-xl gap-4 text-white">
+          <div className="flex gap-6 text-white">
             <Link
               to={"https://www.facebook.com/profile.php?id=61553430014777"}
               target="_blank"
@@ -50,6 +66,20 @@ const Banner = () => {
             <Link to={"https://github.com/iamcharlie17"} target="_blank">
               <FaGithub />
             </Link>
+          </div>
+        </div>
+        <div className="text-gray-400 text-2xl absolute bottom-12">
+          <div
+            className={`flex flex-col items-center transition-transform duration-500 gap-4 ${
+              hidden && ""
+            }`}
+          >
+            <h1 className="text-sm ">Scroll</h1>
+            <HashLink smooth to={"#about"}>
+              <div className="animate-bounce transition-transform">
+                <FaArrowDownLong />
+              </div>
+            </HashLink>
           </div>
         </div>
       </div>

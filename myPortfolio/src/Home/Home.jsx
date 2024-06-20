@@ -10,7 +10,7 @@ const Home = () => {
     return (
         <div id="home">
             <Banner/>
-            <EidMubarak/>
+            {/* <EidMubarak/> */}
             <About/>
             <Services/>
             <Projects/>
