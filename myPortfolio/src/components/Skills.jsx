@@ -26,6 +26,7 @@ const Skills = () => {
       text: "black",
       background: "gray",
     },
+    
   };
 
   return (
@@ -33,10 +34,22 @@ const Skills = () => {
       <SectionTitle heading={"Skills"} />
       <div className="flex justify-between gap-8 my-12 mx-4 md:mx-12 lg:mx-24">
         <div className="flex-1">
-          <SkillBar skills={skills1} height={20} symbolColor="yellow" colors={colors}></SkillBar>
+          <SkillBar
+            animationDuration={1000}
+            skills={skills1}
+            height={20}
+            symbolColor="yellow"
+            colors={colors}
+          ></SkillBar>
         </div>
         <div className="flex-1">
-          <SkillBar skills={skills2} height={20} symbolColor="yellow" colors={colors} />
+          <SkillBar
+            animationDuration={1000}
+            skills={skills2}
+            height={20}
+            symbolColor="yellow"
+            colors={colors}
+          />
         </div>
       </div>
     </div>

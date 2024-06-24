@@ -1,11 +1,9 @@
 import SectionTitle from "./SectionTitle";
-
-
 const Projects = () => {
     return (
-        <div id="works" className="min-h-[50vh]">
+        <div id="projects" className="my-12 md:my-24">
             <div>
-                <SectionTitle heading={'Recent Works'}/>
+                <SectionTitle heading={'Recent projects'}/>
             </div>
             <div>
                 <h1 className="font-normal text-center my-12">Projects here...</h1>

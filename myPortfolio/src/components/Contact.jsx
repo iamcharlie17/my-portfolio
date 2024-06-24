@@ -34,23 +34,23 @@ const Contact = () => {
   };
 
   return (
-    <div className="relative">
-      <div id="contact" className="min-h-[50vh]">
+    <div id="contact" className="relative mt-12 md:mt-24">
+      <div>
         <div>
           <SectionTitle heading={"Contact"} />
         </div>
-        <div className="flex flex-col lg:flex-row items-center my-12 gap-8 mx-4 md:mx-12 lg:mx-24">
+        <div className="flex flex-col lg:flex-row items-center py-12 gap-8 mx-4 md:mx-12 lg:mx-24">
           <div className="space-y-4 text-center lg:text-start lg:w-1/3 ">
             <div className="space-y-2 ">
-              <h1 className="text-yellow-400">Phone:</h1>
+              <h1 className="text-yellow-500">Phone:</h1>
               <p className="text-gray-200">+8801827885889</p>
             </div>
             <div className="space-y-2">
-              <h1 className="text-yellow-400">Address:</h1>
+              <h1 className="text-yellow-500">Address:</h1>
               <p className="text-gray-200">Dhaka, Bangladesh</p>
             </div>
             <div className="space-y-2">
-              <h1 className="text-yellow-400">Email:</h1>
+              <h1 className="text-yellow-500">Email:</h1>
               <p className="text-gray-200">riyadhosen40@gmail.com</p>
             </div>
           </div>
@@ -59,7 +59,7 @@ const Contact = () => {
               <div>
                 <input
                   type="text"
-                  className="w-full py-3 text-gray-200 bg-gray-900 px-4 rounded-full"
+                  className="w-full py-3 text-gray-200 bg-gray-800 px-4 rounded-full"
                   name="name"
                   placeholder="Name"
                   id="name"
@@ -68,7 +68,7 @@ const Contact = () => {
               <div>
                 <input
                   type="text"
-                  className="w-full py-3 text-gray-200 bg-gray-900 px-4 rounded-full"
+                  className="w-full py-3 text-gray-200 bg-gray-800 px-4 rounded-full"
                   name="phone"
                   placeholder="Phone"
                   id="phone"
@@ -77,7 +77,7 @@ const Contact = () => {
               <div>
                 <input
                   type="email"
-                  className="w-full py-3 text-gray-200 bg-gray-900 px-4 rounded-full"
+                  className="w-full py-3 text-gray-200 bg-gray-800 px-4 rounded-full"
                   name="email"
                   placeholder="Email"
                   id="email"
@@ -86,7 +86,7 @@ const Contact = () => {
               <div>
                 <input
                   type="text"
-                  className="w-full py-3 text-gray-200 bg-gray-900 px-4 rounded-full"
+                  className="w-full py-3 text-gray-200 bg-gray-800 px-4 rounded-full"
                   name="subject"
                   placeholder="Subject"
                   id="subject"
@@ -94,7 +94,7 @@ const Contact = () => {
               </div>
               <div className="md:col-span-2">
                 <textarea
-                  className="w-full py-3 text-gray-200 bg-gray-900 px-4 rounded-3xl"
+                  className="w-full py-3 text-gray-200 bg-gray-800 px-4 rounded-3xl"
                   name="message"
                   placeholder="Message"
                   id="message"
@@ -104,7 +104,7 @@ const Contact = () => {
               <div className="text-center md:col-span-2">
                 <button
                   disabled={loading}
-                  className="py-2 px-12 bg-gray-400 hover:bg-yellow-400 text-black font-semibold rounded-full"
+                  className="py-2 px-12 bg-gray-400 hover:bg-yellow-400 transition-colors duration-500 text-black font-semibold rounded-full"
                 >
                   {loading ? "Wait..." : "Send Message"}
                 </button>

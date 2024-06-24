@@ -25,9 +25,9 @@ const Banner = () => {
   // console.log(hidden)
 
   return (
-    <div>
+    <div id="home">
       <div
-        className="hero min-h-screen mb-12 "
+        className="hero min-h-screen mb-12 md:mb-24 "
         style={{
           backgroundImage: `url(${banner})`,
         }}

@@ -1,21 +1,73 @@
-import { useState } from "react";
-// import { ImMenu } from "react-icons/im";
+import { useEffect, useState } from "react";
+import { FaBars } from "react-icons/fa";
+import { FaXmark } from "react-icons/fa6";
+
 import {
   HashLink,
   NavHashLink,
 } from "react-router-hash-link/dist/react-router-hash-link.cjs.production";
 
-
 const Nav = () => {
   const [fix, setFix] = useState(false);
   const [toggleMenu, setToggleMenu] = useState(false);
+
+  const [activeLink, setActiveLink] = useState("");
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const home = document.getElementById("home");
+      const about = document.getElementById("about");
+      const services = document.getElementById("services");
+      const projects = document.getElementById("projects");
+      const contact = document.getElementById("contact");
+
+      const scrollPosition = window.scrollY;
+
+      if (
+        scrollPosition >= home.offsetTop &&
+        scrollPosition < home.offsetTop + home.offsetHeight
+      ) {
+        setActiveLink("Home");
+      } else if (
+        scrollPosition >= about.offsetTop &&
+        scrollPosition < about.offsetTop + about.offsetHeight
+      ) {
+        setActiveLink("About");
+      } else if (
+        scrollPosition >= services.offsetTop &&
+        scrollPosition < services.offsetTop + services.offsetHeight
+      ) {
+        setActiveLink("Services");
+      } else if (
+        scrollPosition >= projects.offsetTop &&
+        scrollPosition < projects.offsetTop + projects.offsetHeight
+      ) {
+        setActiveLink("Projects");
+      } else if (
+        scrollPosition >= contact.offsetTop &&
+        scrollPosition < contact.offsetTop + contact.offsetHeight
+      ) {
+        setActiveLink("Contact");
+      } else {
+        setActiveLink("");
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  console.log(activeLink);
 
   const handleFixed = () => {
     if (window.scrollY >= 100) {
       setFix(true);
     } else {
       setFix(false);
-      setToggleMenu(false)
+      setToggleMenu(false);
     }
   };
 
@@ -25,17 +77,15 @@ const Nav = () => {
     { to: "#home", label: "Home" },
     { to: "#about", label: "About" },
     { to: "#services", label: "Services" },
-    { to: "#works", label: "Works" },
+    { to: "#projects", label: "Projects" },
     { to: "#contact", label: "Contact" },
   ];
-
-  // console.log(toggleMenu);
 
   return (
     <div>
       <div
-        className={`py-4 fixed bg-transparent w-full  transition-all duration-500 z-10 ${
-          fix && " bg-white text-black"
+        className={`py-4 fixed bg-transparent w-full transition-all duration-500 z-10 ${
+          fix && " bg-[#1F2937] text-gray-200"
         }`}
       >
         <div className="container mx-auto">
@@ -43,20 +93,24 @@ const Nav = () => {
             <div>
               <HashLink smooth to={"#home"}>
                 <h1
-                  className={`text-3xl md:text-5xl font-kaushan font-bold ${
-                    fix ? "text-black" : "text-gray-200"
-                  }`}
+                  className={`text-3xl md:text-5xl font-kaushan text-gray-200 font-bold`}
                 >
-                  Charlie
+                  Cha<span className="text-yellow-500">r</span>lie
                 </h1>
               </HashLink>
             </div>
             <div>
-              <ul className={`gap-4 hidden  ${fix ? "md:flex" : "hidden"}`}>
+              <ul className={`gap-4 hidden  ${fix ? "md:flex transition-colors duration-500" : "hidden "}`}>
                 {links.map((link) => (
                   <li key={link.to}>
-                    <NavHashLink smooth to={link.to} className={``}>
-                      {link.label}
+                    <NavHashLink
+                      smooth
+                      to={link.to}
+                      className={`${
+                        activeLink === link.label ? "font-bold  shadow-lg  text-yellow-500 " : "font-medium"
+                      } hover:text-yellow-500 `}
+                    >
+                      {link.label} 
                     </NavHashLink>
                   </li>
                 ))}
@@ -64,7 +118,7 @@ const Nav = () => {
             </div>
             <div className={`md:hidden ${fix ? "flex" : "hidden"}`}>
               <button onClick={() => setToggleMenu(!toggleMenu)}>
-                {toggleMenu ? "Close" : "Menu"}
+                {toggleMenu ? <FaXmark size={25} /> : <FaBars size={25} />}
               </button>
             </div>
           </div>

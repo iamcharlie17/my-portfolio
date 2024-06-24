@@ -8,7 +8,7 @@ import Services from "../components/Services";
 
 const Home = () => {
     return (
-        <div id="home">
+        <div>
             <Banner/>
             {/* <EidMubarak/> */}
             <About/>
