@@ -85,7 +85,7 @@ const Nav = () => {
     <div>
       <div
         className={`py-4 fixed bg-transparent w-full transition-all duration-500 z-10 ${
-          fix && " bg-[#1F2937] text-gray-200"
+          fix && " bg-slate-800 text-gray-200"
         }`}
       >
         <div className="container mx-auto">
@@ -93,7 +93,7 @@ const Nav = () => {
             <div>
               <HashLink smooth to={"#home"}>
                 <h1
-                  className={`text-3xl md:text-5xl font-kaushan text-gray-200 font-bold`}
+                  className={`text-3xl md:text-5xl font-kaushan text-gray-200  font-bold`}
                 >
                   Cha<span className="text-yellow-500">r</span>lie
                 </h1>
@@ -107,7 +107,7 @@ const Nav = () => {
                       smooth
                       to={link.to}
                       className={`${
-                        activeLink === link.label ? "font-bold  shadow-lg  text-yellow-500 " : "font-medium"
+                        activeLink === link.label ? "font-bold  text-yellow-500 " : "font-medium"
                       } hover:text-yellow-500 `}
                     >
                       {link.label} 
