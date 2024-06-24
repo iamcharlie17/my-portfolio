@@ -59,7 +59,7 @@ const Contact = () => {
               <div>
                 <input
                   type="text"
-                  className="w-full py-3 text-gray-200 px-4 rounded-full"
+                  className="w-full py-3 text-gray-200 bg-gray-900 px-4 rounded-full"
                   name="name"
                   placeholder="Name"
                   id="name"
@@ -68,7 +68,7 @@ const Contact = () => {
               <div>
                 <input
                   type="text"
-                  className="w-full py-3 text-gray-200 px-4 rounded-full"
+                  className="w-full py-3 text-gray-200 bg-gray-900 px-4 rounded-full"
                   name="phone"
                   placeholder="Phone"
                   id="phone"
@@ -77,7 +77,7 @@ const Contact = () => {
               <div>
                 <input
                   type="email"
-                  className="w-full py-3 text-gray-200 px-4 rounded-full"
+                  className="w-full py-3 text-gray-200 bg-gray-900 px-4 rounded-full"
                   name="email"
                   placeholder="Email"
                   id="email"
@@ -86,7 +86,7 @@ const Contact = () => {
               <div>
                 <input
                   type="text"
-                  className="w-full py-3 text-gray-200 px-4 rounded-full"
+                  className="w-full py-3 text-gray-200 bg-gray-900 px-4 rounded-full"
                   name="subject"
                   placeholder="Subject"
                   id="subject"
@@ -94,7 +94,7 @@ const Contact = () => {
               </div>
               <div className="md:col-span-2">
                 <textarea
-                  className="w-full py-3 text-gray-200 px-4 rounded-3xl"
+                  className="w-full py-3 text-gray-200 bg-gray-900 px-4 rounded-3xl"
                   name="message"
                   placeholder="Message"
                   id="message"
@@ -113,8 +113,8 @@ const Contact = () => {
           </div>
         </div>
       </div>
-      <div>
-        <SimpleMap/>
+      <div className="mx-4 md:mx-12 lg:mx-24">
+        <SimpleMap />
       </div>
     </div>
   );

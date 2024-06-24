@@ -3,7 +3,7 @@ import SectionTitle from "./SectionTitle";
 
 const Projects = () => {
     return (
-        <div className="min-h-[50vh]">
+        <div id="works" className="min-h-[50vh]">
             <div>
                 <SectionTitle heading={'Recent Works'}/>
             </div>
